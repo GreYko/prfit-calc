@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.proofit'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '15'
+
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+    jvmArgs("--enable-preview")
+}
