@@ -10,10 +10,13 @@ public class PremiumFactory {
     static TheftPremium configuredTheftPremium = new TheftPremium();
 
     public static PremiumCalculator getPremiumCalculator(RiskType riskType) {
-        return switch (riskType) {
-            case FIRE -> configuredFirePremium;
-            case THEFT -> configuredTheftPremium;
-            default -> throw new ApplicationException("No calculator for Policy Sub Object defined.");
-        };
+        switch (riskType) {
+            case FIRE:
+                return configuredFirePremium;
+            case THEFT:
+                return configuredTheftPremium;
+            default:
+                throw new ApplicationException("No calculator for Policy Sub Object defined.");
+        }
     }
 }
