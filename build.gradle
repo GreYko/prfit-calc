@@ -6,10 +6,6 @@ group 'org.proofit'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '15'
 
-tasks.withType(JavaCompile).each {
-    it.options.compilerArgs.add('--enable-preview')
-}
-
 repositories {
     mavenCentral()
 }
@@ -24,5 +20,4 @@ test {
     testLogging {
         events("passed", "skipped", "failed")
     }
-    jvmArgs("--enable-preview")
 }
