@@ -9,7 +9,7 @@ public class PremiumFactory {
     static FirePremium configuredFirePremium = new FirePremium();
     static TheftPremium configuredTheftPremium = new TheftPremium();
 
-    public static PremiumCalculator getPremiumCalculator(RiskType riskType) {
+    public static Premium getPremiumCalculator(RiskType riskType) {
         return switch (riskType) {
             case FIRE -> configuredFirePremium;
             case THEFT -> configuredTheftPremium;

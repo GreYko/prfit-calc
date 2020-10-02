@@ -1,13 +1,13 @@
 plugins {
-    id 'java'
+    id "java"
 }
 
-group 'org.proofit'
-version '1.0-SNAPSHOT'
-sourceCompatibility = '15'
+group "org.proofit"
+version "1.0-SNAPSHOT"
+sourceCompatibility = "15"
 
 tasks.withType(JavaCompile).each {
-    it.options.compilerArgs.add('--enable-preview')
+    it.options.compilerArgs.add("--enable-preview")
 }
 
 repositories {
@@ -15,8 +15,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
 }
 
 test {
