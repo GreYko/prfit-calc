@@ -16,7 +16,7 @@ public class PremiumFactory {
             case THEFT:
                 return configuredTheftPremium;
             default:
-                throw new ApplicationException("No calculator for Policy Sub Object defined.");
+                throw new ApplicationException("No calculator for Policy Sub Object with RiskType '" + riskType + "' defined.");
         }
     }
 }
