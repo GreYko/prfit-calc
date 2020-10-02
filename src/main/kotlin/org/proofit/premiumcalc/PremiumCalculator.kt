@@ -8,9 +8,8 @@ class PremiumCalculator {
     fun calculate(policy: Policy): BigDecimal {
         val insuredSumsByRiskType = policy.objects
                 .flatMap { it.subObjects }
-                .map { it.riskType to it.sumInsured }
-                .groupBy { it.first }
-                .mapValues { entry -> entry.value.sumOf { it.second } }
+                .groupBy { it.riskType }
+                .mapValues { entry -> entry.value.sumOf { it.sumInsured } }
 
         val grandTotal = insuredSumsByRiskType
                 .map { sumInsuredTotal -> PremiumFactory.getPremium(sumInsuredTotal.key).calculate(sumInsuredTotal.value) }
