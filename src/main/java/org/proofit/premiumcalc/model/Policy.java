@@ -14,39 +14,15 @@ public final class Policy {
         this.objects = objects;
     }
 
-    public String policyNumber() {
+    public String getPolicyNumber() {
         return policyNumber;
     }
 
-    public PolicyStatus status() {
+    public PolicyStatus getStatus() {
         return status;
     }
 
-    public List<PolicyObject> objects() {
+    public List<PolicyObject> getObjects() {
         return objects;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Policy) obj;
-        return Objects.equals(this.policyNumber, that.policyNumber) &&
-                Objects.equals(this.status, that.status) &&
-                Objects.equals(this.objects, that.objects);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(policyNumber, status, objects);
-    }
-
-    @Override
-    public String toString() {
-        return "Policy[" +
-                "policyNumber=" + policyNumber + ", " +
-                "status=" + status + ", " +
-                "objects=" + objects + ']';
-    }
-
 }

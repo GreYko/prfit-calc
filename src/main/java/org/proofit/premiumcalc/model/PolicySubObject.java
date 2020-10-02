@@ -14,39 +14,15 @@ public final class PolicySubObject {
         this.riskType = riskType;
     }
 
-    public String subObjectName() {
+    public String getSubObjectName() {
         return subObjectName;
     }
 
-    public BigDecimal sumInsured() {
+    public BigDecimal getSumInsured() {
         return sumInsured;
     }
 
-    public RiskType riskType() {
+    public RiskType getRiskType() {
         return riskType;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (PolicySubObject) obj;
-        return Objects.equals(this.subObjectName, that.subObjectName) &&
-                Objects.equals(this.sumInsured, that.sumInsured) &&
-                Objects.equals(this.riskType, that.riskType);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(subObjectName, sumInsured, riskType);
-    }
-
-    @Override
-    public String toString() {
-        return "PolicySubObject[" +
-                "subObjectName=" + subObjectName + ", " +
-                "sumInsured=" + sumInsured + ", " +
-                "riskType=" + riskType + ']';
-    }
-
 }
