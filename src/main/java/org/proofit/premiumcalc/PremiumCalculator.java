@@ -18,7 +18,7 @@ public class PremiumCalculator {
                                 Collectors.reducing(BigDecimal.ZERO, PolicySubObject::sumInsured, BigDecimal::add)));
 
         var grandTotal = insuredSumsByRiskType.entrySet().stream()
-                .map(sumInsuredTotal -> PremiumFactory.getPremiumCalculator(sumInsuredTotal.getKey()).calculate(sumInsuredTotal.getValue()))
+                .map(sumInsuredTotal -> PremiumFactory.getPremium(sumInsuredTotal.getKey()).calculate(sumInsuredTotal.getValue()))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         return MoneyUtil.roundToMoney(grandTotal);
