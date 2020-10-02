@@ -13,7 +13,7 @@ class PremiumFactoryTest {
 
     @Test
     void getPremiumCalculator() {
-        assertEquals(FirePremium.class, PremiumFactory.getPremiumCalculator(RiskType.FIRE).getClass());
-        assertEquals(TheftPremium.class, PremiumFactory.getPremiumCalculator(RiskType.THEFT).getClass());
+        assertEquals(FirePremium.class, PremiumFactory.getPremium(RiskType.FIRE).getClass());
+        assertEquals(TheftPremium.class, PremiumFactory.getPremium(RiskType.THEFT).getClass());
     }
 }
