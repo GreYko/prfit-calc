@@ -11,6 +11,7 @@ public class PolicyBuilder {
 
     private List<PolicyObject> policyObjects = new ArrayList<>();
     private int policyObjectCounter = 0;
+
     private PolicyBuilder() {
     }
 

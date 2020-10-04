@@ -1,18 +1,16 @@
-package org.proofit.premiumcalc.calculation.subobject;
+package org.proofit.premiumcalc.calculation;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.proofit.premiumcalc.calculation.TheftPremium;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TheftPremiumTest {
-    TheftPremium theftPremium = new TheftPremium();
-
     private final static String lowCoefficient = "0.05";
     private final static String highCoefficient = "0.11";
+    TheftPremium theftPremium = new TheftPremium();
 
     @ParameterizedTest(name = "getCoefficient_{index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
     @CsvSource({
