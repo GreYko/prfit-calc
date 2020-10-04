@@ -32,7 +32,6 @@ If `org.proofit.premiumcalc.calculation.PremiumFactory` wasn't configured - Appl
 
 * Configuration of coefficients and limits for `FirePremium` and `TheftPremium`
 * DI configuration might replace `PremiumFactory`
-* Experiment with grouping reducer and flat maps due to existing implementation isn't most readable one (`PremiumCalculator`)
 
 ## Assumptions
 
