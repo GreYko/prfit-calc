@@ -1,20 +1,26 @@
 package org.proofit.premiumcalc.calculation
 
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 import java.math.BigDecimal
 
 
 class TheftPremiumTest {
-    private val theftPremium = TheftPremium()
+    companion object {
+        private val theftPremium = TheftPremium()
 
-    @Test
-    fun getCoefficient() {
-        val lowCoefficient = BigDecimal("0.05")
-        val highCoefficient = BigDecimal("0.11")
+        private const val lowCoefficient = "0.05"
+        private const val highCoefficient = "0.11"
+    }
 
-        assertEquals(highCoefficient, theftPremium.getCoefficient(BigDecimal("5.00")))
-        assertEquals(lowCoefficient, theftPremium.getCoefficient(BigDecimal("15.00")))
-        assertEquals(lowCoefficient, theftPremium.getCoefficient(BigDecimal("20.00")))
+    @ParameterizedTest(name = "getCoefficient_{index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
+    @CsvSource(
+            "5.00,$highCoefficient",
+            "15.00,$lowCoefficient",
+            "20.00,$lowCoefficient",
+    )
+    fun getCoefficient(premiumAmt: BigDecimal, expectedCoef: BigDecimal) {
+        assertEquals(expectedCoef, theftPremium.getCoefficient(premiumAmt))
     }
 }
