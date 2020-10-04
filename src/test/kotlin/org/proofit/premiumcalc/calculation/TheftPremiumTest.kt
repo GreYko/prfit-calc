@@ -9,8 +9,7 @@ class TheftPremiumTest {
     private val theftPremium = TheftPremium()
 
     @Test
-    fun getCoefficient()
-    {
+    fun getCoefficient() {
         val lowCoefficient = BigDecimal("0.05")
         val highCoefficient = BigDecimal("0.11")
 
