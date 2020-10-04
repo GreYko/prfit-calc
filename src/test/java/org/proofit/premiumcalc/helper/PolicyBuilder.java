@@ -9,14 +9,13 @@ import java.util.function.Function;
 
 public class PolicyBuilder {
 
-    public static PolicyBuilder createPolicy() {
-        return new PolicyBuilder();
-    }
-
     private List<PolicyObject> policyObjects = new ArrayList<>();
     private int policyObjectCounter = 0;
-
     private PolicyBuilder() {
+    }
+
+    public static PolicyBuilder createPolicy() {
+        return new PolicyBuilder();
     }
 
     public PolicyBuilder withObject(Function<PolicyObjectBuilder, PolicyObjectBuilder> f) {
