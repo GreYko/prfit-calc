@@ -20,7 +20,7 @@ class MoneyUtilTest {
             "2.101,2.10",
             "2.1,2.10",
             "25.1219999999,25.12",
-            "123465422534525.1209999,123465422534525.12"
+            "123465422534525.1209999,123465422534525.12",
     })
     void roundToMoney(BigDecimal input, BigDecimal expectedOutput) {
         assertEquals(expectedOutput, MoneyUtil.roundToMoney(input));
