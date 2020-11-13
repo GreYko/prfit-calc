@@ -12,10 +12,6 @@ public final class PolicyObject {
         this.subObjects = subObjects;
     }
 
-    public String getObjectName() {
-        return objectName;
-    }
-
     public List<PolicySubObject> getSubObjects() {
         return subObjects;
     }

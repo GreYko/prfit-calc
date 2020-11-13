@@ -12,7 +12,7 @@ class TheftPremiumTest {
     private final static String highCoefficient = "0.11";
     TheftPremium theftPremium = new TheftPremium();
 
-    @ParameterizedTest(name = "getCoefficient_{index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
+    @ParameterizedTest(name = "getCoefficient, case {index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
     @CsvSource({
             "5.00," + highCoefficient,
             "15.00," + lowCoefficient,

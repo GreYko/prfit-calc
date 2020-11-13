@@ -23,6 +23,6 @@ class MoneyUtilTest {
             "123465422534525.1209999,123465422534525.12",
     })
     void roundToMoney(BigDecimal input, BigDecimal expectedOutput) {
-        assertEquals(expectedOutput, MoneyUtil.roundToMoney(input));
+        assertEquals(expectedOutput, PremiumRounder.roundToMoney(input));
     }
 }

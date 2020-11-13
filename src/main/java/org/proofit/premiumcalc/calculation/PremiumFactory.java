@@ -5,7 +5,6 @@ import org.proofit.premiumcalc.model.RiskType;
 
 
 public class PremiumFactory {
-    // TODO: add configurability for calculators
     static FirePremium configuredFirePremium = new FirePremium();
     static TheftPremium configuredTheftPremium = new TheftPremium();
 

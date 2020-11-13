@@ -14,14 +14,6 @@ public final class Policy {
         this.objects = objects;
     }
 
-    public String getPolicyNumber() {
-        return policyNumber;
-    }
-
-    public PolicyStatus getStatus() {
-        return status;
-    }
-
     public List<PolicyObject> getObjects() {
         return objects;
     }

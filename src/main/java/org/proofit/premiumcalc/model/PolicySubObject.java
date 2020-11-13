@@ -14,10 +14,6 @@ public final class PolicySubObject {
         this.riskType = riskType;
     }
 
-    public String getSubObjectName() {
-        return subObjectName;
-    }
-
     public BigDecimal getSumInsured() {
         return sumInsured;
     }

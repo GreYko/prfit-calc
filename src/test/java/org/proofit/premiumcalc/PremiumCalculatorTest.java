@@ -12,7 +12,13 @@ class PremiumCalculatorTest {
     PremiumCalculator calculator = new PremiumCalculator();
 
     @Test
-    void businessSampleCalculation1() {
+    void emptyPolicyCalculation() {
+        var policy = PolicyBuilder.createPolicy().build();
+        Assertions.assertEquals(new BigDecimal("0.00"), calculator.calculate(policy));
+    }
+
+    @Test
+    void businessSample1SimpleCalculation() {
         var policy = PolicyBuilder.createPolicy()
                 .withObject(o -> o
                         .withSubObject("100.00", RiskType.FIRE)
@@ -22,7 +28,7 @@ class PremiumCalculatorTest {
     }
 
     @Test
-    void businessSampleCalculation2() {
+    void businessSample2SimpleCalculation() {
         var policy = PolicyBuilder.createPolicy()
                 .withObject(o -> o
                         .withSubObject("500.00", RiskType.FIRE)
@@ -32,7 +38,7 @@ class PremiumCalculatorTest {
     }
 
     @Test
-    void businessSampleCalculation2_complex() {
+    void businessSample2ComplexCalculation() {
         var policy = PolicyBuilder.createPolicy()
                 .withObject(o -> o
                         .withSubObject("100.00", RiskType.FIRE)

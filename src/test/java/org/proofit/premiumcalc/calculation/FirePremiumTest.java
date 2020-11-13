@@ -12,7 +12,7 @@ class FirePremiumTest {
     private final static String highCoefficient = "0.024";
     FirePremium firePremium = new FirePremium();
 
-    @ParameterizedTest(name = "getCoefficient_{index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
+    @ParameterizedTest(name = "getCoefficient, case {index}: premium amount ''{0}'' should have ''{1}'' coefficient applied")
     @CsvSource({
             "50.00," + lowCoefficient,
             "100.00," + lowCoefficient,
