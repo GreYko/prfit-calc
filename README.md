@@ -26,7 +26,7 @@ So decided to make project with almost no dependencies at first iteration.
     
 #### Risks
 
-If `org.proofit.premiumcalc.calculation.PremiumFactory` wasn't configured - Application exception to be thrown at runtime.
+If `org.proofit.premiumcalc.calculation.PremiumFactory` wasn't configured - test suite will fail.
 
 ### What can be improved
 
